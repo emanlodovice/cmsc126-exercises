@@ -1,8 +1,7 @@
 # Exercise 1 - URL Parsing
 
 ## Instructions
-    Given an incomplete file `index.html` that contains some html, css, and
-    some javascript, your task is to fill the missing code in the area indicated by the comment `add your code here`.
-
-## How to run the file
-    To run the file just save `index.html` in your local machine and open it in your browser.
+The goal is make a page that accepts a URI and identifies the different parts of the given URI (scheme, authority, etc).
+You are given the files `index.html` and `parser.js`. The file `parser.js` is incomplete and your task to
+fill the missing code to make the URI parser work. The file `parser.js` is loaded in `index.html` so if you want
+to check if your code produces the right results just open `index.html` in your browser.
