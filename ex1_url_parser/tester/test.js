@@ -2,6 +2,16 @@ var assert = chai.assert;
 
 var testCases = [
     {
+        uri: 'http://www.sample.com',
+        parts: {
+            scheme: 'http',
+            authority: 'www.sample.com',
+            path: '',
+            query: '',
+            fragment: ''
+        }
+    },
+    {
         uri: 'http://www.sample.com/?test=1#id',
         parts: {
             scheme: 'http',
@@ -29,6 +39,67 @@ var testCases = [
             path: '',
             query: 'cool=1',
             fragment: 'yes?no=1'
+        }
+    },
+    {
+        uri: 'https://tools.ietf.org/html/rfc3986#section-3',
+        parts: {
+            scheme: 'https',
+            authority: 'tools.ietf.org',
+            path: '/html/rfc3986',
+            query: '',
+            fragment: 'section-3'
+        }
+    },
+    {
+        uri: 'file://user:pass@host.com:9000/index.html#section-3?test=1',
+        parts: {
+            scheme: 'file',
+            authority: 'user:pass@host.com:9000',
+            path: '/index.html',
+            query: '',
+            fragment: 'section-3?test=1'
+        }
+    },
+    {
+        uri: 'mailto:sample@example.com',
+        parts: {
+            scheme: 'mailto',
+            authority: '',
+            path: 'sample@example.com',
+            query: '',
+            fragment: ''
+        }
+    },
+    {
+        uri: 'http://ex.sample.com?data=1#section-3',
+        parts: {
+            scheme: 'http',
+            authority: 'ex.sample.com',
+            path: '',
+            query: 'data=1',
+            fragment: 'section-3'
+        }
+    },
+
+    {
+        uri: 'http://www.ex.sample.com?data=1?/&g=1#section-3?c=1',
+        parts: {
+            scheme: 'http',
+            authority: 'www.ex.sample.com',
+            path: '',
+            query: 'data=1?/&g=1',
+            fragment: 'section-3?c=1'
+        }
+    },
+    {
+        uri: 'http://www.ex.sample.com/tester/?data=1?/&g=1#section-3?c=1',
+        parts: {
+            scheme: 'http',
+            authority: 'www.ex.sample.com',
+            path: '/tester/',
+            query: 'data=1?/&g=1',
+            fragment: 'section-3?c=1'
         }
     },
 ]
